@@ -8,7 +8,7 @@
 #import "API/BNHtmlPdfKit.h"
 
 
-@interface RNMyLibrary : NSObject <RCTBridgeModule, UIDocumentInteractionControllerDelegate>
+@interface PDFGenerator : NSObject <RCTBridgeModule, UIDocumentInteractionControllerDelegate>
     @property  BNHtmlPdfKit *htmlPdfKit;
     @property UIDocumentInteractionController *docController;
 @end

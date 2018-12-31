@@ -1,9 +1,9 @@
 
-#import "RNPDF.h"
+#import "PDFGenerator.h"
 #import <React/RCTLog.h>
 
 
-@implementation RNMyLibrary
+@implementation PDFGenerator
 
 - (dispatch_queue_t)methodQueue
 {

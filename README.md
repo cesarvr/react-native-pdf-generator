@@ -9,7 +9,7 @@ The PDF is returned in base64 format so you can use more specialized modules to 
 
 To install the library:
 
-#### Easy Way
+### Easy Way
 
 ```sh
   npm i rn-pdf-generator --save

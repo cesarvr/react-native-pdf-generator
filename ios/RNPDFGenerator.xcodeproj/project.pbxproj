@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNPDF.m */; };
+		B3E7B58A1CC2AC0600A0062D /* PDFGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* PDFGenerator.m */; };
 		DB42CC9C21DAB49E00D75144 /* BNHtmlPdfKit.m in Sources */ = {isa = PBXBuildFile; fileRef = DB42CC9A21DAB49D00D75144 /* BNHtmlPdfKit.m */; };
 /* End PBXBuildFile section */
 
@@ -26,8 +26,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libPDFGenerator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPDFGenerator.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3E7B5881CC2AC0600A0062D /* RNPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPDF.h; sourceTree = "<group>"; };
-		B3E7B5891CC2AC0600A0062D /* RNPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPDF.m; sourceTree = "<group>"; };
+		B3E7B5881CC2AC0600A0062D /* PDFGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFGenerator.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* PDFGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFGenerator.m; sourceTree = "<group>"; };
 		DB42CC9A21DAB49D00D75144 /* BNHtmlPdfKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNHtmlPdfKit.m; sourceTree = "<group>"; };
 		DB42CC9B21DAB49E00D75144 /* BNHtmlPdfKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNHtmlPdfKit.h; sourceTree = "<group>"; };
 		DB9A2F1921D963A50056E240 /* API */ = {isa = PBXFileReference; lastKnownFileType = folder; path = API; sourceTree = "<group>"; };
@@ -58,8 +58,8 @@
 				DB42CC9B21DAB49E00D75144 /* BNHtmlPdfKit.h */,
 				DB42CC9A21DAB49D00D75144 /* BNHtmlPdfKit.m */,
 				DB9A2F1921D963A50056E240 /* API */,
-				B3E7B5881CC2AC0600A0062D /* RNPDF.h */,
-				B3E7B5891CC2AC0600A0062D /* RNPDF.m */,
+				B3E7B5881CC2AC0600A0062D /* PDFGenerator.h */,
+				B3E7B5891CC2AC0600A0062D /* PDFGenerator.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB42CC9C21DAB49E00D75144 /* BNHtmlPdfKit.m in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* RNPDF.m in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* PDFGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
