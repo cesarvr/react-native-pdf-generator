@@ -5,6 +5,11 @@ Is a light weight native library that transform HTML to PDF, or even better tran
 
 The PDF is returned in base64 format so you can use more specialized modules to mail, sharing, visualizing, etc.
 
+### Supported Devices
+
+* iOS >8
+* Android >19
+
 ## Getting started
 
 To install the library:
@@ -15,8 +20,6 @@ To install the library:
   npm i rn-pdf-generator --save
   react-native link
 ```
-
-
 
 ## Usage
 
@@ -49,3 +52,5 @@ PDF.fromURL('https://www.google.com/')
 Basically this library takes HTML as string or remote and loads the xml into an internal iOS/Android WebKit, then it traverse the web page generating a WYSIWYG PDF document.
 
 This plugin uses a very light weight iOS library for this called [ BNHtmlPdfKit](https://github.com/brentnycum/BNHtmlPdfKit).
+
+For Android it just use [WebView](https://developer.android.com/reference/android/webkit/WebView).
