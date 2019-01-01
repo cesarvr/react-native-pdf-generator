@@ -63,7 +63,8 @@ PDF.fromURL('https://www.google.com/')
 
 ### Demo 
 
-This demo that generates a PDF and then display it using [react-native-pdf plugin](https://www.npmjs.com/package/react-native-pdf). 
+
+[This demo](https://github.com/cesarvr/react-native-pdf-generator-demo) that generates a PDF and then display it using [react-native-pdf plugin](https://www.npmjs.com/package/react-native-pdf). 
 
 ![Demo](https://github.com/cesarvr/react-native-pdf-generator-demo/blob/master/demo-img/pdf_document.gif?raw=true)
 
