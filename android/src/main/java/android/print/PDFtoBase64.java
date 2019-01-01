@@ -1,7 +1,7 @@
 package android.print;
 
-import com.reactlibrary.PDFNotify;
-import com.reactlibrary.PDFStore;
+import com.pdf.generator.PDFNotify;
+import com.pdf.generator.PDFStore;
 import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.ParcelFileDescriptor;

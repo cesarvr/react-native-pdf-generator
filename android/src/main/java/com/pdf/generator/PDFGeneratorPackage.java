@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.pdf.generator;
 
 import java.util.Arrays;
 import java.util.Collections;

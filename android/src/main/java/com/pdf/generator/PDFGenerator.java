@@ -1,11 +1,12 @@
 
-package com.reactlibrary;
+package com.pdf.generator;
 
 import android.content.Context;
 import android.os.Build;
 import android.print.PDFtoBase64;
 import android.support.annotation.RequiresApi;
 import android.webkit.WebView;
+import com.pdf.generator.OffscreenBrowser;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;

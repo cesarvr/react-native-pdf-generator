@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.pdf.generator;
 
 
 public class PDFNotify{

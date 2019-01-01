@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.pdf.generator;
 
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
