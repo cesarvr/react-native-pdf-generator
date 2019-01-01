@@ -30,7 +30,12 @@ To install the library:
   react-native link
 ```
 
-## Usage
+### Hard Way
+
+[hard way...](https://facebook.github.io/react-native/docs/linking-libraries-ios)
+
+
+### Usage
 
 To transform raw HTML into PDF:
 
