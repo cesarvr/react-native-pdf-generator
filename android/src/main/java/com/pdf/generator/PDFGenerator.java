@@ -4,7 +4,7 @@ package com.pdf.generator;
 import android.content.Context;
 import android.os.Build;
 import android.print.PDFtoBase64;
-import android.support.annotation.RequiresApi;
+
 import android.webkit.WebView;
 import com.pdf.generator.OffscreenBrowser;
 
@@ -28,7 +28,6 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
 
 
 
-  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   private PDFtoBase64 configure(Context ctx, final Promise promise) {
       final PDFStore temporaryStorage = new PDFStore(ctx);
       PDFtoBase64 pdfB64 = new PDFtoBase64(temporaryStorage);
@@ -44,7 +43,6 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
       return pdfB64;
   }
 
-  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
   public void fromURL(String URL, final Promise promise) {
         Context ctx  = this.getCurrentActivity().getBaseContext();
@@ -54,7 +52,6 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
                 .loadFromURL(URL);
   }
 
-  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
   public void fromHTML(String HTML, String baseURL, Promise promise){
        Context ctx  = this.getCurrentActivity().getBaseContext();

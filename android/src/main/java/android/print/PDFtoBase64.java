@@ -5,7 +5,6 @@ import com.pdf.generator.PDFStore;
 import android.os.Build;
 import android.os.CancellationSignal;
 import android.os.ParcelFileDescriptor;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
 
 import android.content.Context;
@@ -17,7 +16,6 @@ import java.io.IOException;
 
 // https://github.com/cesarvr/pdf-generator/issues/9
 // http://www.annalytics.co.uk/android/pdf/2017/04/06/Save-PDF-From-An-Android-WebView/
-@RequiresApi(api = Build.VERSION_CODES.KITKAT)
 public class PDFtoBase64 {
 
     private static final String TAG = PDFtoBase64.class.getSimpleName();
@@ -36,7 +34,6 @@ public class PDFtoBase64 {
     PDFNotify notify;
 
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public PDFtoBase64(PDFStore store) {
         this.store = store;
         PrintAttributes.MediaSize mediaSize = pageType.asLandscape();
@@ -52,7 +49,7 @@ public class PDFtoBase64 {
         this.notify = notify;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+
     public void process(final PrintDocumentAdapter printAdapter) {
 
         final CancellationSignal cancellationSignal = new CancellationSignal();
