@@ -9,6 +9,8 @@ import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.RequiresApi;
+
 
 public class OffscreenBrowser {
       private WebView webView;
@@ -21,6 +23,7 @@ public class OffscreenBrowser {
           webView.getSettings().setJavaScriptEnabled(true);
       }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private PrintDocumentAdapter getPrintAdapter(WebView webView){
         PrintDocumentAdapter printAdapter = null;
         Log.e(TAG, "creating a new WebView adapter.");
@@ -28,6 +31,7 @@ public class OffscreenBrowser {
             printAdapter = webView.createPrintDocumentAdapter("default");
         } else {
             printAdapter = webView.createPrintDocumentAdapter();
+
         }
 
         return printAdapter;
@@ -36,6 +40,7 @@ public class OffscreenBrowser {
       public OffscreenBrowser setPrinterAdapter(final PDFtoBase64 pdFtoBase64){
 
           webView.setWebViewClient(new WebViewClient() {
+              @RequiresApi(api = Build.VERSION_CODES.KITKAT)
               @Override
               public void onPageFinished(WebView view, String url) {
                   super.onPageFinished(view, url);

@@ -6,6 +6,9 @@ import android.os.Build;
 import android.print.PDFtoBase64;
 
 import android.webkit.WebView;
+
+import androidx.annotation.RequiresApi;
+
 import com.pdf.generator.OffscreenBrowser;
 
 import com.facebook.react.bridge.Promise;
@@ -28,6 +31,7 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
 
 
 
+  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   private PDFtoBase64 configure(Context ctx, final Promise promise) {
       final PDFStore temporaryStorage = new PDFStore(ctx);
       PDFtoBase64 pdfB64 = new PDFtoBase64(temporaryStorage);
@@ -43,22 +47,39 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
       return pdfB64;
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
-  public void fromURL(String URL, final Promise promise) {
+  public void fromURL(final String URL, final Promise promise) {
         Context ctx  = this.getCurrentActivity().getBaseContext();
         PDFtoBase64 p2b64 = configure(ctx, promise);
-        new OffscreenBrowser(ctx)
-                .setPrinterAdapter(p2b64)
-                .loadFromURL(URL);
+
+        final OffscreenBrowser offscreen = new OffscreenBrowser(ctx)
+                .setPrinterAdapter(p2b64);
+
+      getCurrentActivity().runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+              offscreen.loadFromURL(URL);
+          }
+      });
   }
 
+  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
-  public void fromHTML(String HTML, String baseURL, Promise promise){
+  public void fromHTML(final String HTML, final String baseURL, Promise promise){
        Context ctx  = this.getCurrentActivity().getBaseContext();
        PDFtoBase64 p2b64 = configure(ctx, promise);
-       new OffscreenBrowser(ctx)
-               .setPrinterAdapter(p2b64)
-               .loadFromRawHTML(HTML, baseURL);
+
+       final OffscreenBrowser offscreen = new OffscreenBrowser(ctx)
+                                            .setPrinterAdapter(p2b64);
+
+       getCurrentActivity().runOnUiThread(new Runnable() {
+           @Override
+           public void run() {
+               offscreen.loadFromRawHTML(HTML, baseURL);
+           }
+       });
+
   }
 
   @Override
