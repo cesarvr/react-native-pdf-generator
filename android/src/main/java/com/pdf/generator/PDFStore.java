@@ -13,7 +13,7 @@ import java.io.IOException;
 public class PDFStore {
       private final String TAG = this.getClass().getName();
       private static final String FILE_PREFIX = "PDF_GENERATOR";
-      private static final String FILE_EXTENSION = "pdf";
+      private static final String FILE_EXTENSION = ".pdf";
       private File file;
       private ParcelFileDescriptor pfd;
       private Context ctx;

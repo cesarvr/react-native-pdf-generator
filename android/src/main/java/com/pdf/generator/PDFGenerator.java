@@ -1,10 +1,12 @@
 
 package com.pdf.generator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.print.PDFtoBase64;
 
+import android.util.Log;
 import android.webkit.WebView;
 
 import androidx.annotation.RequiresApi;
@@ -27,13 +29,14 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
   public PDFGenerator(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
+    Log.d(TAG, "PDFGenerator: Constructor");
   }
 
 
 
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-  private PDFtoBase64 configure(Context ctx, final Promise promise) {
-      final PDFStore temporaryStorage = new PDFStore(ctx);
+  private PDFtoBase64 configure(final Promise promise) {
+      final PDFStore temporaryStorage = new PDFStore(this.getCurrentActivity().getBaseContext());
       PDFtoBase64 pdfB64 = new PDFtoBase64(temporaryStorage);
 
       pdfB64.setG(new PDFNotify(){
@@ -50,15 +53,16 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
   public void fromURL(final String URL, final Promise promise) {
-        Context ctx  = this.getCurrentActivity().getBaseContext();
-        PDFtoBase64 p2b64 = configure(ctx, promise);
+      final Activity activity = this.reactContext.getCurrentActivity();
 
-        final OffscreenBrowser offscreen = new OffscreenBrowser(ctx)
-                .setPrinterAdapter(p2b64);
-
-      getCurrentActivity().runOnUiThread(new Runnable() {
+      activity.runOnUiThread(new Runnable() {
           @Override
           public void run() {
+              PDFtoBase64 p2b64 = configure(promise);
+
+              final OffscreenBrowser offscreen = new OffscreenBrowser(activity)
+                      .setPrinterAdapter(p2b64);
+
               offscreen.loadFromURL(URL);
           }
       });
@@ -66,19 +70,21 @@ public class PDFGenerator extends ReactContextBaseJavaModule {
 
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @ReactMethod
-  public void fromHTML(final String HTML, final String baseURL, Promise promise){
-       Context ctx  = this.getCurrentActivity().getBaseContext();
-       PDFtoBase64 p2b64 = configure(ctx, promise);
+  public void fromHTML(final String HTML, final String baseURL, final Promise promise){
+      final Activity activity = this.reactContext.getCurrentActivity();
 
-       final OffscreenBrowser offscreen = new OffscreenBrowser(ctx)
-                                            .setPrinterAdapter(p2b64);
+      activity.runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+              PDFtoBase64 p2b64 = configure(promise);
 
-       getCurrentActivity().runOnUiThread(new Runnable() {
-           @Override
-           public void run() {
-               offscreen.loadFromRawHTML(HTML, baseURL);
-           }
-       });
+              final OffscreenBrowser offscreen = new OffscreenBrowser(activity)
+                      .setPrinterAdapter(p2b64);
+
+              offscreen.loadFromRawHTML(HTML, baseURL);
+          }
+      });
+
 
   }
 

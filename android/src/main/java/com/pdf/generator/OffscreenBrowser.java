@@ -1,6 +1,7 @@
   
 package com.pdf.generator;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.print.PDFtoBase64;
@@ -12,12 +13,14 @@ import android.webkit.WebViewClient;
 import androidx.annotation.RequiresApi;
 
 
-public class OffscreenBrowser {
+public class    OffscreenBrowser {
       private WebView webView;
       private final String DEFAULT_BASE_URL = "http://localhost";
       private final String TAG = this.getClass().getName();
 
-      public OffscreenBrowser(Context ctx){
+      public OffscreenBrowser(Activity activity){
+          final Context ctx = activity.getBaseContext();
+
           webView = new WebView(ctx);
           webView.getSettings().setDatabaseEnabled(true);
           webView.getSettings().setJavaScriptEnabled(true);
@@ -58,6 +61,7 @@ public class OffscreenBrowser {
 
           //https://developer.android.com/reference/android/webkit/WebView.html#loadDataWithBaseURL(java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String,%20java.lang.String)
           webView.loadDataWithBaseURL(baseURL, data,"text/HTML","UTF-8",null);
+          //webView.loadData(data, "text/HTML", "UTF-8");
       }
 
       public void loadFromURL(String url){
