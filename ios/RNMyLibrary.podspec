@@ -1,15 +1,15 @@
 
 Pod::Spec.new do |s|
-  s.name         = "RNMyLibrary"
+  s.name         = "RN-PDF-Generator"
   s.version      = "1.0.0"
-  s.summary      = "RNMyLibrary"
+  s.summary      = "RN-PDF-Generator"
   s.description  = <<-DESC
-                  RNMyLibrary
+                  RN-PDF-Generator
                    DESC
   s.homepage     = ""
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author             = { "author" => "author@domain.cn" }
+  s.author             = { "author" => "cesarvr@yahoo.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/author/RNMyLibrary.git", :tag => "master" }
   s.source_files  = "RNMyLibrary/**/*.{h,m}"

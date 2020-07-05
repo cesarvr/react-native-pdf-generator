@@ -13,11 +13,18 @@ This plugin uses a very light weight iOS library for this called [ BNHtmlPdfKit]
 
 For Android it just use [WebView](https://developer.android.com/reference/android/webkit/WebView).
 
+#### Changelog
+
+**1.6.1:** Removed deprecated UIWebView.
+
 
 ### Supported Devices
 
 * iOS >=8
 * Android >=19
+
+
+
 
 ## Getting started
 
