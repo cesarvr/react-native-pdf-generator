@@ -15,6 +15,7 @@ For Android it just use [WebView](https://developer.android.com/reference/androi
 
 #### Changelog
 
+**1.6.4:** Adding React Native ``0.6x`` compatibility.
 **1.6.1:** Removed deprecated UIWebView.
 
 
