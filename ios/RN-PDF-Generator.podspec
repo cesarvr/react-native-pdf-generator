@@ -1,12 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name         = "RN-PDF-Generator"
-  s.version      = "1.0.0"
+  s.version      = "1.6.2"
   s.summary      = "RN-PDF-Generator"
   s.description  = <<-DESC
                   RN-PDF-Generator
                    DESC
-  s.homepage     = ""
+  s.homepage     = "https://github.com/cesarvr/react-native-pdf-generator"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.author             = { "author" => "cesarvr@yahoo.com" }
