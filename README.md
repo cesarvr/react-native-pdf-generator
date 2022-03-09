@@ -1,7 +1,6 @@
-
 ## PDF Generator for React Native.
 
-Is a light weight native library that transform HTML to PDF, or even better transform the content of a URL like ```https://google.com``` into a PDF.
+Is a light weight native library that transform HTML to PDF, or even better transform the content of a URL like `https://google.com` into a PDF.
 
 The PDF is returned in base64 format so you can use more specialized modules to mail, sharing, visualizing, etc.
 
@@ -15,17 +14,14 @@ For Android it just use [WebView](https://developer.android.com/reference/androi
 
 #### Changelog
 
-**1.6.4:** Adding React Native ``0.6x`` compatibility.
+**1.6.5:** Added maven plugin on android build.gradle for compatibility with gradle 7.x version.
+**1.6.4:** Adding React Native `0.6x` compatibility.
 **1.6.1:** Removed deprecated UIWebView.
-
 
 ### Supported Devices
 
-* iOS >=8
-* Android >=19
-
-
-
+- iOS >=8
+- Android >=19
 
 ## Getting started
 
@@ -42,39 +38,32 @@ To install the library:
 
 [hard way...](https://facebook.github.io/react-native/docs/linking-libraries-ios)
 
-
 ### Usage
 
 To transform raw HTML into PDF:
 
 ```javascript
-import PDF  from 'rn-pdf-generator';
+import PDF from "rn-pdf-generator"
 
 PDF.fromHTML(`<P>HELLO WORLD</P>`, `http://localhost`)
-   .then(  data => console.log(data)) // WFuIGlzIGRpc3Rpbm....
-   .catch( err  =>  console.log('error->', err) )
+  .then(data => console.log(data)) // WFuIGlzIGRpc3Rpbm....
+  .catch(err => console.log("error->", err))
 ```
 
-> In case you this HTML fetch resources from external servers you can specify the location using the second parameter ``<base-url>``.
+> In case you this HTML fetch resources from external servers you can specify the location using the second parameter `<base-url>`.
 
 Transforming a remote webpage:
 
 ```javascript
+import PDF from "rn-pdf-generator"
 
-import PDF  from 'rn-pdf-generator';
-
-PDF.fromURL('https://www.google.com/')
-   .then(  data => console.log(data)) // WFuIGlzIGRpc3Rpbm....
-   .catch( err  =>  console.log('error->', err) )
-
+PDF.fromURL("https://www.google.com/")
+  .then(data => console.log(data)) // WFuIGlzIGRpc3Rpbm....
+  .catch(err => console.log("error->", err))
 ```
 
-### Demo 
+### Demo
 
-
-[This demo](https://github.com/cesarvr/react-native-pdf-generator-demo) that generates a PDF and then display it using [react-native-pdf plugin](https://www.npmjs.com/package/react-native-pdf). 
+[This demo](https://github.com/cesarvr/react-native-pdf-generator-demo) that generates a PDF and then display it using [react-native-pdf plugin](https://www.npmjs.com/package/react-native-pdf).
 
 ![Demo](https://github.com/cesarvr/react-native-pdf-generator-demo/blob/master/demo-img/pdf_document.gif?raw=true)
-
-
-
